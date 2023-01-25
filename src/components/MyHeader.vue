@@ -1,73 +1,86 @@
 <template>
   <header>
-    <div class="position-fixed">
-      <div class="container">
-          <!-- Header top -->
-          <div class="header-top">
-            <!-- Left section header top -->
-            <div class="left-heder-top">
-                <ul>
-                  <li><a href="#">Contribusci</a></li>
-                  <li><a href="#">Abbonati</a></li>
-                </ul>
-            </div>
-            <!-- Right section header top -->
-            <div  class="right-heder-top">
-              <div><i class="fa-solid fa-user"></i> Accedi</div>
+    <div class="fixed-top bg-light">
+      <div class="container-fluid my-position-relative">
+          <span class="  border-end border-secondary border-start border-secondary d-block d-sm-none my-h-100"></span>
+        <div class="row border-bottom pt-3 border-secondary">
+            <!-- Header top -->
+            <div class="header-top row d-flex d-flex justify-content-between ">
+              <!-- Left section header top -->
+              <div class="left-heder-top col-12 col-sm-2 ">
+                  <ul class="d-flex justify-content-around ms-5">
+                    <li class="col-xs-6"><a href="#">Contribusci</a></li>
+                    
+                    <li class="col-xs-6"><a href="#">Abbonati</a></li>
+                  </ul>
+              </div>
+
+              <!-- <div class="col-10 col-sm-auto"></div> -->
+
+              <!-- Right section header top -->
+              <div  class="right-heder-top col-1 col-sm-2 text-end d-none d-sm-inline-block me-5">
+                <div><i class="fa-solid fa-user "></i> Accedi</div>
+              </div>
             </div>
           </div>
-        </div>
-        <hr>
-        <!-- Section search -->
-        <div class="container">
-          <div class="search-menu">
-            <div class="menu-hidden">
-              <i class="fa-solid fa-bars"></i>
-            </div>
-
-            <div class="search-icon">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
           </div>
-        
-        </div>
-      <hr>
-        <!-- Section link pages -->
-        <div class="container">
-          <nav>
+          <!-- Section search -->
 
-            <ul>
-              <li v-for="(link, index) in links_nav" :key="index" >
-                <a :class="link.current?'active':''" :href="link.url"> {{link.text}}</a>
-              </li>
-              
-            </ul>
-            <div class="nav-icon">
-              Aa<i class="fa-solid fa-image"></i>
+            <div class="container-fluid border-bottom border-secondary ">
+
+                <div class=" row d-flex d-flex justify-content-between ">
+
+                  <div class="menu-hidden col-2 col-sm-1 col-xs-2 text-center">
+                    <a href="#"><i class="fa-solid fa-bars fs-1 text-danger  pt-4 pb-4"></i></a>
+                  </div>
+                  <div class=" col-sm-10 col-8 border-start border-secondary border-end border-secondary pt-4 pb-4"></div>
+                  
+                  <div class="search-icon col-2 col-sm-1 col-xs-2  text-center ">
+                    <a href="#">
+                      <i class="fa-solid fa-magnifying-glass text-danger fs-1 pt-4 pb-4"></i>
+                    </a>
+                  </div>
+                </div>
+
             </div>
-            
-          </nav>
 
-        </div>
-      <hr>
+
+          <!-- Section link pages -->
+          <div class="container-fluid border-bottom border-secondary d-none d-lg-inline-block">
+            <nav class="row justify-content-around">
+
+              <ul class="col-11">
+                <li v-for="(link, index) in links_nav" :key="index" >
+                  <a :class="link.current?'active':''" :href="link.url"> {{link.text}}</a>
+                </li>
+
+              </ul>
+              <div class="nav-icon col-1 text-end ">
+                Aa<i class="fa-solid fa-image"></i>
+              </div>
+
+            </nav>
+
+          </div> 
 
     </div>
-    <div class="container">
-      <div class="header-bottom">
-        <div class="title">
-          <h2>Tutti i temi</h2>
+
+    <!-- Section button  -->
+    <div class="container-fluid my-mt-10 mb-4">
+      <div class="header-bottom row">
+        <div class="title col-12 col-lg-4 ps-5">
+          <h2>Tutti i temi <i class="fa-solid fa-chevron-down fs-1 d-inline-block d-lg-none"></i></h2>
         </div>
-        <ul>
-          <li v-for="(link, index) in links_button" :key="index" >
-            <button v-bind:style="{ 'background-color':link.color}"> {{link.text}}</button>
+        <ul class=" col-12 col-lg-8 d-flex flex-wrap ">
+          <li class="mx-3 my-3" v-for="(link, index) in links_button" :key="index" >
+            <button :style="{ 'background-color':link.color}"> {{link.text}}</button>
           </li>
-            
+
         </ul>
-        
+
       </div>
 
     </div>
-   <hr>
   </header>
 </template>
 
@@ -122,7 +135,7 @@ export default {
       links_button: [
               {
                 text: "AMBIENTE",
-                color:"#9afda4",
+                color:"#cbffd0e2",
               },
               {
                 text: "ECONOMIA",
@@ -130,7 +143,7 @@ export default {
               },
               {
                 text: "MONDO",
-                color:"#fd9aac",
+                color:"#fdc5c5",
               },
               {
                 text: "NON PROFIT",
@@ -138,7 +151,7 @@ export default {
               },
               {
                 text: "POLITICA",
-                color:"#f5fd9a",
+                color:"#f5fab9",
               },
               {
                 text: "SOCIETÀ",
@@ -157,117 +170,76 @@ export default {
 
 
 <style scoped lang="scss">
+.my-mt-10{
+  margin-top: 250px;
+}
+.my-position-relative{
+  position: relative;
+}
+.my-h-100{
+  height: 100%;
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+ ul{
+   display: flex;
+   li{
+     list-style: none;
+   }
+ }
 
-//General rules page
-.position-fixed{
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  background-color: #fff;
-}
-hr{
-  border: 1px solid #000;
-}
-
-ul{
-  display: flex;
-  li{
-    list-style: none;
-  }
-}
-
-a{
-  text-decoration: none;
-  padding: 10px;
-  font-size: 14px;
-  color: #000;
-  font-weight: 500;
-  padding-bottom: 36px;
-}
-//End general rules page
-.container{
- 
-  width: 90%;
-  .header-top{
-   
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .search-menu{
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .fa-solid{
-      color: #f90202;
-      font-size: 40px;
-    }
-    .menu-hidden{
-      height: 100%;
-      width: 100px;
-      display: flex;
-      border-right: 3px solid #000;
-      align-items: center;
-      justify-content: center;
-      
-    }
-    .search-icon{
-      height: 100%;
-      width: 100px;
-      display: flex;
-      border-left: 3px solid #000;
-      align-items: center;
-      justify-content: center;
-     
-    }
-  }
-}
+ a{
+   text-decoration: none;
+   padding: 10px;
+   font-size: 14px;
+   color: #000;
+   font-weight: 500;
+   padding-bottom: 36px;
+ }
 
 //Nav section
-nav{
-  height: 89px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
- 
-  ul{
-    li{
-      a{
-        height: 100%;
-        text-decoration: none;
-        padding: 20px;
-        font-size: 24px;
-        color: #000;
-        font-weight: 700;
-        padding-bottom: 20px;
-  
-        &.active, &:hover{
-          border-bottom: 8px solid #f90202;
-          
-        }
-      }
-    }
-  }
-  .nav-icon{
-    font-size: 30px;
-    .fa-image{
-      
-      border: 1px solid #000;
-      padding: 5px;
-      border-radius: 5px;
-      margin-left: 10px;
-      box-shadow: -2px 2px 1px 0px;
-    }
-  }
+ nav{
+   height: 89px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   ul{
+     li{
+       a{
+         height: 100%;
+         text-decoration: none;
+         font-size: 24px;
+         color: #000;
+         font-weight: 700;
+         padding-bottom: 30px;
+
+         &.active, &:hover{
+           border-bottom: 8px solid #f90202;
+
+         }
+       }
+     }
+   }
+   .nav-icon{
+     font-size: 30px;
+     .fa-image{
+
+       border: 1px solid #000;
+       padding: 5px;
+       border-radius: 5px;
+       margin-left: 10px;
+       box-shadow: -2px 2px 1px 0px;
+     }
+   }
 }
 
 //Header bottom section
 .header-bottom{
-  margin-top: 250px;
-  height: 200px;
+
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -280,7 +252,7 @@ nav{
       button{
         text-align: center;
         padding: 10px;
-        margin: 0px 10px;
+      
         border-radius: 5px;
         color: #000;
         font-weight: 600;

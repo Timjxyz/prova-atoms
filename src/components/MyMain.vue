@@ -1,27 +1,33 @@
 <template>
-  <main>
-      
-  </main>
+<main>
+  <MyArticlesSection/>
+  <!-- <MyArticlesSectionSm/> -->
+</main>
 </template>
 
 <script>
-
-import MainItems from './partials/MainItems.vue';
-
+import MyArticlesSection from './partials/MyArticlesSection.vue';
+// import MyArticlesSectionSm from './partials/MyArticlesSectionSm.vue';
 export default {
   name: 'MyMain',
   components: {
-    MainItems
-    
+    MyArticlesSection,
+    // MyArticlesSectionSm,
   },
   data(){
     return{
+      
     }
   }
+  
 }
 </script>
 
 
 <style scoped lang="scss">
-
+ .container::after{
+    display: table;
+    content: "";
+    clear: both;
+}
 </style>
